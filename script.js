@@ -604,33 +604,76 @@ function initFloatingCapInteraction() {
   });
 }
 
+// ===================================================================
+// FIREBASE REALTIME DATABASE CONFIGURATION
+// (Dán thông tin cấu hình từ Firebase Console của bạn vào đây)
+// ===================================================================
+const FIREBASE_CONFIG = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
 function initGuestbook() {
   const form = document.getElementById("wishForm");
   const senderInput = document.getElementById("wishSenderName");
   const messageInput = document.getElementById("wishMessageText");
   const dynamicContainer = document.getElementById("dynamicWishesContainer");
-  const toggleMoreBtn = document.getElementById("toggleMoreWishesBtn");
-  const expandBtnText = document.getElementById("expandBtnText");
+  const countBadge = document.getElementById("wishesCountBadge");
 
   if (!form || !senderInput || !messageInput || !dynamicContainer) return;
 
   const STORAGE_KEY = "hiu_graduation_wishes_van_v2";
   let wishes = [];
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) wishes = JSON.parse(raw);
-  } catch (err) {
-    wishes = [];
+  let isFirebaseReady = false;
+  let wishesDbRef = null;
+
+  // Kiểm tra nếu người dùng đã cấu hình Firebase hợp lệ
+  if (
+    typeof firebase !== "undefined" &&
+    FIREBASE_CONFIG &&
+    FIREBASE_CONFIG.apiKey &&
+    !FIREBASE_CONFIG.apiKey.startsWith("YOUR_")
+  ) {
+    try {
+      if (!firebase.apps || !firebase.apps.length) {
+        firebase.initializeApp(FIREBASE_CONFIG);
+      }
+      wishesDbRef = firebase.database().ref("graduation_wishes");
+      isFirebaseReady = true;
+    } catch (err) {
+      console.warn("Firebase initialization notice, using local storage fallback:", err);
+      isFirebaseReady = false;
+    }
   }
 
-  function renderDynamicWishes() {
+  function renderWishesList(items) {
     dynamicContainer.innerHTML = "";
-    wishes.forEach((w) => {
+    if (countBadge) countBadge.textContent = items.length;
+
+    if (!items || items.length === 0) {
+      dynamicContainer.innerHTML = `
+        <div class="no-wishes-placeholder">
+          💌 Chưa có lời chúc nào. Hãy là người đầu tiên gửi lời chúc tốt nghiệp đến Tố Uyên nhé! ✨
+        </div>
+      `;
+      return;
+    }
+
+    items.forEach((w) => {
       const card = document.createElement("div");
       card.className = "wish-card";
+      const timeStr = w.timeStr || w.date || "";
       card.innerHTML = `
         <div class="wish-card-inner">
-          <div class="wish-author-name">${escapeHtml(w.name)}</div>
+          <div class="wish-card-top">
+            <span class="wish-author-name">${escapeHtml(w.name)}</span>
+            ${timeStr ? `<span class="wish-time-tag">${escapeHtml(timeStr)}</span>` : ""}
+          </div>
           <div class="wish-message-body">${escapeHtml(w.message)}</div>
         </div>
       `;
@@ -638,8 +681,33 @@ function initGuestbook() {
     });
   }
 
-  renderDynamicWishes();
+  if (isFirebaseReady && wishesDbRef) {
+    // Lắng nghe dữ liệu theo thời gian thực (Realtime WebSocket)
+    wishesDbRef.limitToLast(100).on("value", (snapshot) => {
+      const val = snapshot.val();
+      const list = [];
+      if (val) {
+        Object.keys(val).forEach((k) => {
+          list.push({ id: k, ...val[k] });
+        });
+        // Sắp xếp mới nhất lên đầu
+        list.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+      }
+      wishes = list;
+      renderWishesList(wishes);
+    });
+  } else {
+    // Fallback lưu LocalStorage khi chưa dán config Firebase
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) wishes = JSON.parse(raw);
+    } catch (err) {
+      wishes = [];
+    }
+    renderWishesList(wishes);
+  }
 
+  // Xử lý gửi lời chúc
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = senderInput.value.trim();
@@ -650,38 +718,66 @@ function initGuestbook() {
       return;
     }
 
+    const now = new Date();
+    const timeStr = `${now.getHours().toString().padStart(2, "0")}:${now.getMinutes().toString().padStart(2, "0")} · ${now.toLocaleDateString("vi-VN")}`;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const origBtnText = submitBtn ? submitBtn.textContent : "Gửi lời chúc";
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Đang gửi...";
+    }
+
+    if (isFirebaseReady && wishesDbRef) {
+      // Đẩy lên Firebase Realtime Database
+      wishesDbRef.push({
+        name: name,
+        message: message,
+        timestamp: firebase.database.ServerValue.TIMESTAMP,
+        timeStr: timeStr
+      })
+      .then(() => {
+        form.reset();
+        triggerConfettiBurst();
+        showToast("✨ Cảm ơn bạn rất nhiều vì lời chúc ý nghĩa!");
+      })
+      .catch((err) => {
+        console.error("Firebase push error:", err);
+        saveLocally(name, message, timeStr);
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = origBtnText;
+        }
+      });
+    } else {
+      saveLocally(name, message, timeStr);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = origBtnText;
+      }
+    }
+  });
+
+  function saveLocally(name, message, timeStr) {
     const newWish = {
       id: Date.now(),
       name: name,
       message: message,
-      date: new Date().toLocaleDateString("vi-VN")
+      timestamp: Date.now(),
+      timeStr: timeStr
     };
-
     wishes.unshift(newWish);
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
     } catch (err) {
       console.warn(err);
     }
-
-    renderDynamicWishes();
+    renderWishesList(wishes);
     form.reset();
-
     triggerConfettiBurst();
     showToast("✨ Cảm ơn bạn rất nhiều vì lời chúc ý nghĩa!");
-  });
-
-  if (toggleMoreBtn) {
-    let isExpanded = false;
-    toggleMoreBtn.addEventListener("click", () => {
-      isExpanded = !isExpanded;
-      if (isExpanded) {
-        dynamicContainer.style.display = "flex";
-        if (expandBtnText) expandBtnText.textContent = "Thu gọn lời chúc ↑";
-      } else {
-        if (expandBtnText) expandBtnText.textContent = "Xem thêm lời chúc ↓";
-      }
-    });
   }
 }
 

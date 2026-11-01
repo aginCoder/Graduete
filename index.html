@@ -388,18 +388,22 @@
             </div>
           </div>
 
-          <!-- Dynamic wishes from guests inserted here -->
+          <!-- Dynamic wishes from guests inserted here (Realtime Firebase) -->
           <div class="wishes-feed" id="wishesFeed">
-            <div id="dynamicWishesContainer"></div>
+            <div class="wishes-feed-header">
+              <div class="wishes-feed-title">
+                <span class="live-pulse-dot"></span>
+                <span>Lời chúc từ mọi người</span>
+                <span class="wishes-count-badge" id="wishesCountBadge">0</span>
+              </div>
+            </div>
+            <div id="dynamicWishesContainer" class="dynamic-wishes-list"></div>
           </div>
 
         </div>
 
       </section>
 
-      <!-- ===================================================================
-           SLIDE 5: COUNTDOWN & THANK YOU (FINAL SECTION)
-           =================================================================== -->
       <section class="slide-section slide-countdown" id="slide-5" data-index="5">
         
         <!-- Linen Texture -->
@@ -588,6 +592,10 @@
   <!-- CELEBRATORY CONFETTI CANVAS -->
   <canvas id="confettiCanvas"></canvas>
 
-  <script src="./script.js?v=5.2"></script>
+  <!-- Firebase SDK for Realtime Wishes -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <script src="./script.js?v=5.3"></script>
 </body>
 </html>
