@@ -1,45 +1,45 @@
 const ALBUM_PHOTOS = [
   {
     id: "photo-1",
-    src: "assets/images/thu_van_profile.jpg",
+    src: "assets/images/IMG_8636.JPG",
     caption: "Kỷ niệm ngày khoác lên mình chiếc áo cử nhân VHU rạng rỡ",
     category: "portrait"
   },
   {
     id: "photo-2",
-    src: "assets/images/thu_van_portrait.jpg",
+    src: "assets/images/IMG_8637.JPG",
     caption: "Nụ cười rạng rỡ chạm mốc tân cử nhân xuất sắc",
     category: "portrait"
   },
   {
     id: "photo-3",
-    src: "assets/images/van_sunflowers.jpg",
-    caption: "Nắng vàng thanh xuân bên bó hoa hướng dương tươi thắm",
+    src: "assets/images/IMG_8562.JPG",
+    caption: "Nắng vàng thanh xuân rạng rỡ ngày nhận bằng tốt nghiệp",
     category: "ceremony"
   },
   {
     id: "photo-4",
-    src: "assets/images/van_besties.jpg",
-    caption: "Cùng hội bạn thân kề vai sát cánh đi qua bao mùa deadline",
+    src: "assets/images/IMG_8564.JPG",
+    caption: "Cùng những người bạn thân thương kề vai sát cánh",
     category: "besties"
   },
   {
     id: "photo-5",
-    src: "assets/images/cap_toss.jpg",
-    caption: "Khoảnh khắc tung mũ cử nhân bay vút lên bầu trời ước mơ",
+    src: "assets/images/IMG_8575.JPG",
+    caption: "Khoảnh khắc thanh xuân rực rỡ dưới mái trường thân yêu",
     category: "ceremony"
   },
   {
     id: "photo-6",
-    src: "assets/images/celebration_flowers.jpg",
+    src: "assets/images/IMG_8580.JPG",
     caption: "Ngập tràn hoa chúc mừng và tình yêu thương từ gia đình, bạn bè",
     category: "ceremony"
   },
   {
     id: "photo-7",
-    src: "assets/images/campus_memories.jpg",
-    caption: "Kỷ niệm những buổi chiều ôn thi, họp nhóm dưới bóng mát sân trường",
-    category: "besties"
+    src: "assets/images/IMG_8588.JPG",
+    caption: "Tự hào chạm mốc cử nhân - Mở ra hành trình tương lai tươi sáng",
+    category: "portrait"
   }
 ];
 
@@ -270,6 +270,37 @@ function createMiniSparkle(x, y) {
   setTimeout(() => sparkle.remove(), 1400);
 }
 
+// ===================================================================
+// VERTICAL SCROLL NAVIGATION (FLOATING CHEVRON BUTTON)
+// ===================================================================
+function initVerticalScrollNavigation() {
+  const scrollBtn = document.getElementById("scrollNextBtn");
+  const viewport = document.getElementById("invitationViewport");
+  if (!scrollBtn || !viewport) return;
+
+  const sections = Array.from(document.querySelectorAll(".slide-section"));
+
+  scrollBtn.addEventListener("click", () => {
+    const currentScroll = viewport.scrollTop;
+    let targetSection = sections.find((sec) => sec.offsetTop > currentScroll + 25);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      sections[0].scrollIntoView({ behavior: "smooth" });
+    }
+  });
+
+  viewport.addEventListener("scroll", () => {
+    const isAtBottom = viewport.scrollTop + viewport.clientHeight >= viewport.scrollHeight - 60;
+    if (isAtBottom) {
+      scrollBtn.classList.add("at-bottom");
+    } else {
+      scrollBtn.classList.remove("at-bottom");
+    }
+  });
+}
+
 function initCountdownTimer() {
   const daysEl = document.getElementById("timerDays");
   const hoursEl = document.getElementById("timerHours");
@@ -479,11 +510,19 @@ function initEnhancedLightbox() {
     currentLightboxIndex = index;
 
     const photo = ALBUM_PHOTOS[currentLightboxIndex];
-    imgEl.style.opacity = "0.4";
-    imgEl.src = photo.src;
-    imgEl.onload = () => {
+    imgEl.style.opacity = "0.2";
+    
+    // Create preloader
+    const preloader = new Image();
+    preloader.onload = () => {
+      imgEl.src = preloader.src;
       imgEl.style.opacity = "1";
     };
+    preloader.onerror = () => {
+      imgEl.src = photo.src;
+      imgEl.style.opacity = "1";
+    };
+    preloader.src = photo.src;
 
     if (captionEl) captionEl.textContent = photo.caption;
     if (counterEl) counterEl.textContent = `Ảnh ${currentLightboxIndex + 1} / ${ALBUM_PHOTOS.length}`;
@@ -505,6 +544,11 @@ function initEnhancedLightbox() {
     el.addEventListener("click", () => {
       const idxAttr = el.getAttribute("data-index");
       const index = idxAttr !== null ? parseInt(idxAttr, 10) : 0;
+      const cardImg = el.querySelector("img");
+      const fullSrc = el.getAttribute("data-full") || (cardImg ? cardImg.getAttribute("src") : "");
+      if (fullSrc && ALBUM_PHOTOS[index]) {
+        ALBUM_PHOTOS[index].src = fullSrc;
+      }
       openLightbox(index);
     });
   });
@@ -695,18 +739,19 @@ function initAmbientPetalsAndSparkles() {
   const petals = [];
   const sparkles = [];
 
-  // Rose / Sakura Petals drifting gently
+  // Celestial Royal Blue & Shimmering Gold Flakes drifting gently
   for (let i = 0; i < 22; i++) {
     petals.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 8 + 6,
-      speedY: Math.random() * 0.8 + 0.4,
+      size: Math.random() * 8 + 5,
+      speedY: Math.random() * 0.7 + 0.35,
       speedX: Math.random() * 0.6 - 0.3,
       angle: Math.random() * Math.PI * 2,
       rotSpeed: (Math.random() - 0.5) * 0.03,
       sway: Math.random() * Math.PI,
-      opacity: Math.random() * 0.4 + 0.25
+      opacity: Math.random() * 0.35 + 0.2,
+      isGold: Math.random() > 0.65
     });
   }
 
@@ -744,7 +789,7 @@ function initAmbientPetalsAndSparkles() {
       ctx.fill();
     });
 
-    // Draw Falling Petals
+    // Draw Falling Petals (Sapphire Blue & Metallic Gold)
     petals.forEach((p) => {
       p.y += p.speedY;
       p.sway += 0.02;
@@ -759,7 +804,9 @@ function initAmbientPetalsAndSparkles() {
       ctx.save();
       ctx.translate(p.x, p.y);
       ctx.rotate(p.angle);
-      ctx.fillStyle = `rgba(228, 151, 169, ${p.opacity})`;
+      ctx.fillStyle = p.isGold
+        ? `rgba(212, 175, 55, ${p.opacity})`
+        : `rgba(96, 165, 250, ${p.opacity * 0.9})`;
 
       // Delicate oval petal shape
       ctx.beginPath();
@@ -798,7 +845,7 @@ function triggerConfettiBurst() {
   const canvas = document.getElementById("confettiCanvas");
   if (!canvas || !confettiCtx) return;
 
-  const colors = ["#D4AF37", "#E497A9", "#7B384A", "#F7E7A9", "#C41230", "#FFFFFF"];
+  const colors = ["#163E75", "#2563EB", "#60A5FA", "#D4AF37", "#F7E7A9", "#FFFFFF"];
   const count = 75;
 
   for (let i = 0; i < count; i++) {

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=4.2">
+  <link rel="stylesheet" href="./style.css?v=5.4">
 </head>
 <body>
 
@@ -23,7 +23,7 @@
         <h2 class="wing-name">Đào Thị Tố Uyên</h2>
         <p class="wing-sub">Faculty of Event Management</p>
         <div class="wing-university">Trường Đại học Văn Hiến</div>
-        <div class="wing-date">18.07.2026 · 10:00 AM</div>
+        <div class="wing-date">17.11.2026 · 09:00 - 11:00 AM</div>
         <div class="wing-quote">“Thanh xuân là những chuyến tàu rực rỡ, cảm ơn vì bạn đã luôn đồng hành cùng mình!”</div>
       </div>
     </aside>
@@ -49,12 +49,91 @@
         </div>
 
         <div class="sash-ribbon" id="sashRibbon" aria-label="Dải băng tốt nghiệp Đào Thị Tố Uyên">
-          <img src="assets/images/pink_satin_sash.png" class="sash-silk-img" alt="Dải băng lụa satin tốt nghiệp" draggable="false">
-          <div class="sash-shimmer-sweep"></div>
-          <div class="sash-content-layer">
-            <div class="sash-faculty-track">Faculty of Event Management</div>
-            <div class="sash-name-track">Đào Thị Tố Uyên</div>
-          </div>
+          <svg class="sash-svg" viewBox="0 0 146 660" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin meet">
+            <defs>
+              <!-- Royal Blue Silk Multi-stop Gradient -->
+              <linearGradient id="sashSilkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#123566"/>
+                <stop offset="16%" stop-color="#1E4CB2"/>
+                <stop offset="34%" stop-color="#153E75"/>
+                <stop offset="50%" stop-color="#2563EB"/>
+                <stop offset="68%" stop-color="#133667"/>
+                <stop offset="84%" stop-color="#1B488C"/>
+                <stop offset="100%" stop-color="#0E2850"/>
+              </linearGradient>
+
+              <!-- Subtle Luster Overlay Gradient -->
+              <linearGradient id="sashSheenGrad" x1="0%" y1="0%" x2="100%" y2="80%">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.24)"/>
+                <stop offset="25%" stop-color="rgba(255,255,255,0.02)"/>
+                <stop offset="50%" stop-color="rgba(255,255,255,0.3)"/>
+                <stop offset="75%" stop-color="rgba(255,255,255,0.04)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0.2)"/>
+              </linearGradient>
+
+              <!-- Metallic Gold Trim Gradient -->
+              <linearGradient id="sashGoldTrimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FDF4D4"/>
+                <stop offset="22%" stop-color="#D4AF37"/>
+                <stop offset="48%" stop-color="#9C7715"/>
+                <stop offset="72%" stop-color="#F2D780"/>
+                <stop offset="100%" stop-color="#B88A1E"/>
+              </linearGradient>
+
+              <!-- ClipPath for wavy silk satin body -->
+              <clipPath id="sashSilkClip">
+                <path d="M 22,0 L 116,0 C 116,50 128,100 129,160 C 130,220 108,270 109,330 C 110,390 130,440 128,500 C 126,550 118,585 114,615 L 67,655 L 20,615 C 22,585 32,550 34,500 C 36,440 16,390 15,330 C 14,270 36,220 35,160 C 34,100 22,50 22,0 Z" />
+              </clipPath>
+
+              <!-- Wavy Guide Spine for Faculty Title (Left Lane) -->
+              <path id="sashFacultySpine" d="M 34,24 C 34,75 46,115 47,160 C 48,220 26,270 27,330 C 28,390 48,440 46,500 C 44,545 36,575 32,605" fill="none" />
+
+              <!-- Wavy Guide Spine for Graduate Script Name (Center-Right Lane) -->
+              <path id="sashNameSpine" d="M 68,26 C 68,75 80,115 81,160 C 82,220 60,270 61,330 C 62,390 82,440 80,500 C 78,545 70,575 66,605" fill="none" />
+            </defs>
+
+            <!-- Organic S-Curve Silk Sash Body -->
+            <path class="sash-svg-body" d="M 22,0 L 116,0 C 116,50 128,100 129,160 C 130,220 108,270 109,330 C 110,390 130,440 128,500 C 126,550 118,585 114,615 L 67,655 L 20,615 C 22,585 32,550 34,500 C 36,440 16,390 15,330 C 14,270 36,220 35,160 C 34,100 22,50 22,0 Z" fill="url(#sashSilkGrad)" />
+
+            <!-- Silk Waves & Depth Highlights (Clipped inside silk contour) -->
+            <g clip-path="url(#sashSilkClip)">
+              <!-- Overall sheen wash -->
+              <rect x="0" y="0" width="146" height="660" fill="url(#sashSheenGrad)" style="mix-blend-mode: overlay; opacity: 0.85;" />
+              
+              <!-- Fold shadow on trough of wave -->
+              <path d="M 33,180 C 40,240 24,285 24,340 C 24,395 44,435 44,490" stroke="rgba(6, 18, 42, 0.45)" stroke-width="26" fill="none" style="filter: blur(8px);" />
+              
+              <!-- Specular highlight streaks on wave crests -->
+              <path d="M 112,120 C 120,165 110,210 105,255" stroke="rgba(255, 255, 255, 0.35)" stroke-width="18" fill="none" style="filter: blur(6px);" />
+              <path d="M 108,440 C 122,480 118,520 106,560" stroke="rgba(255, 255, 255, 0.32)" stroke-width="16" fill="none" style="filter: blur(5px);" />
+
+              <!-- Luminous central crest line -->
+              <path d="M 68,0 C 68,60 80,110 81,160 C 82,220 60,270 61,330 C 62,390 82,440 80,500 C 78,550 72,585 67,655" stroke="rgba(255, 255, 255, 0.22)" stroke-width="14" fill="none" style="filter: blur(5px);" />
+            </g>
+
+            <!-- Embroidered Outer Gold Border Piping -->
+            <path class="sash-svg-gold-border" d="M 22,0 L 116,0 C 116,50 128,100 129,160 C 130,220 108,270 109,330 C 110,390 130,440 128,500 C 126,550 118,585 114,615 L 67,655 L 20,615 C 22,585 32,550 34,500 C 36,440 16,390 15,330 C 14,270 36,220 35,160 C 34,100 22,50 22,0 Z" fill="none" stroke="url(#sashGoldTrimGrad)" stroke-width="3" stroke-linejoin="round" />
+
+            <!-- Inner Gold Accent Stitching -->
+            <path class="sash-svg-inner-stitch" d="M 26,0 L 112,0 C 112,50 124,100 125,160 C 126,220 104,270 105,330 C 106,390 126,440 124,500 C 122,548 114,582 110,610 L 67,647 L 24,610 C 26,582 36,548 38,500 C 40,440 20,390 19,330 C 18,270 40,220 39,160 C 38,100 26,50 26,0 Z" fill="none" stroke="url(#sashGoldTrimGrad)" stroke-width="1" stroke-dasharray="4 2" opacity="0.85" />
+
+            <!-- Left Lane: Faculty/Department Title waving along ribbon -->
+            <text class="sash-svg-faculty">
+              <textPath href="#sashFacultySpine" xlink:href="#sashFacultySpine" startOffset="30px">
+                Faculty of Event Management
+              </textPath>
+            </text>
+
+            <!-- Right Lane: Calligraphy Script Graduate Name waving along ribbon -->
+            <text class="sash-svg-name">
+              <textPath href="#sashNameSpine" xlink:href="#sashNameSpine" startOffset="34px">
+                Đào Thị Tố Uyên
+              </textPath>
+            </text>
+          </svg>
+
+          <!-- 2D Satin Light Reflection Shimmer Sweep -->
+          <div class="sash-shimmer-sweep-2d"></div>
         </div>
 
         <div class="hero-left-content">
@@ -77,20 +156,20 @@
           <div class="graduate-script-name">Đào Thị Tố Uyên</div>
 
           <div class="event-datetime-box">
-            <div class="dt-day">THỨ BẢY</div>
-            <div class="dt-date">18.07.2026</div>
-            <div class="dt-time">10:00 AM</div>
+            <div class="dt-day">THỨ NĂM</div>
+            <div class="dt-date">17.11.2026</div>
+            <div class="dt-time">09:00 - 11:00 AM</div>
           </div>
 
           <div class="event-location-box">
             <div class="loc-label">TẠI</div>
             <div class="loc-venue">Trường Đại học Văn Hiến</div>
-            <div class="loc-address"> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú</div>
+            <div class="loc-address"> 240 3 Tháng 2, Hòa Hưng</div>
             <div class="loc-city">Thành Phố Hồ Chí Minh</div>
           </div>
 
           <div class="action-btn-row">
-            <a href="https://maps.app.goo.gl/WomhQ5xkCkgjrGU6A" target="_blank" rel="noopener noreferrer" class="directions-pill-btn" id="directionsBtn">
+            <a href="https://maps.app.goo.gl/JUZjxKfZMyuVCLwe9" target="_blank" rel="noopener noreferrer" class="directions-pill-btn" id="directionsBtn">
               <span class="dir-icon">📍</span>
               <span class="dir-text">Chỉ đường</span>
             </a>
@@ -100,24 +179,21 @@
 
       </section>
       <section class="slide-section slide-narrative" id="slide-2" data-index="2">
-       <div class="narrative-bg-image" style="background-image: url('assets/images/thu_van_portrait.jpg');"></div>
+       <div class="narrative-bg-image" style="background-image: url('assets/images/IMG_8634.JPG');"></div>
        <div class="narrative-scrim-overlay"></div>
        <div class="narrative-content-wrap">
           <div class="narrative-paragraphs">
             <p>
-              Vậy là sau bao lần chạy deadline, ôn thi xuyên đêm và không ít lần tự hỏi <em>"bao giờ mới ra trường?"</em>, cuối cùng con/ em/ mình cũng đã chạm đến cột mốc tốt nghiệp!
+              Hành trình "chạy deadline" và thức xuyên đêm cuối cùng cũng đơm hoa bằng tấm bằng tốt nghiệp!
             </p>
             <p>
-              Kết thúc một chặng đường cũ để bắt đầu một hành trình mới, con/ em/ mình nhận ra rằng điều quý giá nhất mình có được không chỉ là tấm bằng, mà còn là những kỷ niệm, bài học và những con người tuyệt vời đã đồng hành trên suốt chặng đường ấy.
+              Cảm ơn những người thân yêu đã luôn sát cánh và tô điểm cho thanh xuân của Uyên thật trọn vẹn.
             </p>
             <p>
-              Trong suốt chặng đường này, con/ em/ mình đã trưởng thành hơn rất nhiều nhờ có sự sát cánh, yêu thương và ủng hộ từ mọi người. Chính vì vậy, nếu những người thân yêu của Sườn/ Vân đang cầm trên tay tấm thiệp này, thì mọi người đã góp một phần thật đẹp trong hành trình thanh xuân của con/ em/ mình.
-            </p>
-            <p>
-              Con/ Em/ Mình sẽ rất vui và hạnh phúc nếu được gặp mọi người trong ngày tốt nghiệp để cùng chia sẻ niềm vui và lưu giữ thêm một kỷ niệm đáng nhớ trước khi bắt đầu một hành trình mới.
+              Sự hiện diện của mọi người trong ngày tốt nghiệp chính là món quà ý nghĩa nhất, tiếp thêm sức mạnh cho Uyên bước vào chương mới rực rỡ hơn.
             </p>
             <p class="narrative-highlight">
-              Sự hiện diện của mọi người sẽ là món quà ý nghĩa nhất tiếp thêm sức mạnh cho con/ em/ mình bước sang một chương mới rực rỡ hơn.
+              Uyên rất mong được gặp mọi người để cùng chia sẻ niềm vui và lưu giữ những khoảnh khắc đáng nhớ này! ❤️
             </p>
           </div>
 
@@ -147,9 +223,9 @@
 
           <div class="album-photos-row">
             
-            <div class="photo-card" data-category="portrait" data-index="0" data-full="assets/images/thu_van_profile.jpg" data-caption="Kỷ niệm ngày khoác lên mình chiếc áo cử nhân HIU">
+            <div class="photo-card" data-category="portrait" data-index="0" data-full="assets/images/IMG_8636.JPG" data-caption="Kỷ niệm ngày khoác lên mình chiếc áo cử nhân VHU rạng rỡ">
               <div class="photo-frame">
-                <img src="assets/images/thu_van_profile.jpg" alt="Đào Thị Tố Uyên - Kỷ niệm tốt nghiệp" loading="lazy">
+                <img src="assets/images/IMG_8636.JPG" alt="Đào Thị Tố Uyên - Kỷ niệm tốt nghiệp" loading="lazy">
                 <div class="photo-overlay-tag">
                   <span>Phóng to ✨</span>
                 </div>
@@ -160,9 +236,9 @@
               </div>
             </div>
 
-            <div class="photo-card" data-category="portrait" data-index="1" data-full="assets/images/thu_van_portrait.jpg" data-caption="Nụ cười rạng rỡ chạm mốc cử nhân xuất sắc">
+            <div class="photo-card" data-category="portrait" data-index="1" data-full="assets/images/IMG_8637.JPG" data-caption="Nụ cười rạng rỡ chạm mốc cử nhân xuất sắc">
               <div class="photo-frame">
-                <img src="assets/images/thu_van_portrait.jpg" alt="Đào Thị Tố Uyên - Tân Cử Nhân VHU" loading="lazy">
+                <img src="assets/images/IMG_8637.JPG" alt="Đào Thị Tố Uyên - Tân Cử Nhân VHU" loading="lazy">
                 <div class="photo-overlay-tag">
                   <span>Phóng to ✨</span>
                 </div>
@@ -177,16 +253,27 @@
 
           <div class="album-filter-tabs" id="albumFilterTabs">
             <button class="filter-tab active" data-filter="all">Tất cả (7)</button>
-            <button class="filter-tab" data-filter="portrait">Chân dung</button>
-            <button class="filter-tab" data-filter="besties">Bạn bè</button>
-            <button class="filter-tab" data-filter="ceremony">Lễ trao bằng</button>
           </div>
 
           <div class="extended-album-grid" id="extendedAlbumGrid">
             
-            <div class="grid-photo-item" data-category="ceremony" data-index="2" data-full="assets/images/van_sunflowers.jpg" data-caption="Nụ cười rạng rỡ bên bó hoa hướng dương ngày nhận bằng">
+            <div class="grid-photo-item featured-wide" data-category="besties" data-index="3" data-full="assets/images/IMG_8564.JPG" data-caption="Cùng những người bạn thân thương kề vai sát cánh">
               <div class="item-inner">
-                <img src="assets/images/van_sunflowers.jpg" alt="Đào Thị Tố Uyên ôm hoa tốt nghiệp" loading="lazy">
+                <img src="assets/images/IMG_8564.JPG" alt="Hội bạn thân tốt nghiệp cùng nhau" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">For my besties of youth</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-4">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">420</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="grid-photo-item" data-category="ceremony" data-index="2" data-full="assets/images/IMG_8562.JPG" data-caption="Nắng vàng thanh xuân rạng rỡ ngày nhận bằng tốt nghiệp">
+              <div class="item-inner">
+                <img src="assets/images/IMG_8572.JPG" alt="Đào Thị Tố Uyên ngày nhận bằng" loading="lazy">
                 <div class="item-hover-info">
                   <span class="info-title">Nắng vàng thanh xuân</span>
                   <span class="info-tag">Xem ảnh 🔍</span>
@@ -198,22 +285,9 @@
               </div>
             </div>
 
-            <div class="grid-photo-item featured-wide" data-category="besties" data-index="3" data-full="assets/images/van_besties.jpg" data-caption="Cùng những người bạn thân thương ôm chặt tấm bằng cử nhân">
+            <div class="grid-photo-item" data-category="ceremony" data-index="4" data-full="assets/images/IMG_8575.JPG" data-caption="Khoảnh khắc thanh xuân rực rỡ dưới mái trường thân yêu">
               <div class="item-inner">
-                <img src="assets/images/van_besties.jpg" alt="Hội bạn thân tốt nghiệp cùng nhau" loading="lazy">
-                <div class="item-hover-info">
-                  <span class="info-title">For my besties of youth</span>
-                  <span class="info-tag">Xem ảnh 🔍</span>
-                </div>
-                <button class="photo-heart-btn small" data-id="card-4">
-                  <span class="heart-icon">❤️</span>
-                  <span class="heart-count">420</span>
-                </button>
-              </div>
-            </div>
-            <div class="grid-photo-item" data-category="ceremony" data-index="4" data-full="assets/images/cap_toss.jpg" data-caption="Khoảnh khắc tung mũ cử nhân bay vút lên bầu trời ước mơ">
-              <div class="item-inner">
-                <img src="assets/images/cap_toss.jpg" alt="Tung mũ tốt nghiệp" loading="lazy">
+                <img src="assets/images/IMG_8565.JPG" alt="Khoảnh khắc tốt nghiệp" loading="lazy">
                 <div class="item-hover-info">
                   <span class="info-title">Ước mơ bay cao</span>
                   <span class="info-tag">Xem ảnh 🔍</span>
@@ -225,9 +299,9 @@
               </div>
             </div>
 
-            <div class="grid-photo-item" data-category="ceremony" data-index="5" data-full="assets/images/celebration_flowers.jpg" data-caption="Ngập tràn hoa chúc mừng và tình yêu thương từ gia đình">
+            <div class="grid-photo-item" data-category="ceremony" data-index="5" data-full="assets/images/IMG_8580.JPG" data-caption="Ngập tràn hoa chúc mừng và tình yêu thương từ gia đình, bạn bè">
               <div class="item-inner">
-                <img src="assets/images/celebration_flowers.jpg" alt="Hoa chúc mừng tốt nghiệp" loading="lazy">
+                <img src="assets/images/IMG_8580.JPG" alt="Hoa chúc mừng tốt nghiệp" loading="lazy">
                 <div class="item-hover-info">
                   <span class="info-title">Yêu thương đong đầy</span>
                   <span class="info-tag">Xem ảnh 🔍</span>
@@ -239,11 +313,11 @@
               </div>
             </div>
 
-            <div class="grid-photo-item" data-category="besties" data-index="6" data-full="assets/images/campus_memories.jpg" data-caption="Kỷ niệm những buổi chiều ôn thi, họp nhóm dưới bóng mát sân trường">
+            <div class="grid-photo-item" data-category="portrait" data-index="6" data-full="assets/images/IMG_8588.JPG" data-caption="Tự hào chạm mốc cử nhân - Mở ra hành trình tương lai tươi sáng">
               <div class="item-inner">
-                <img src="assets/images/campus_memories.jpg" alt="Khuôn viên trường thân thương" loading="lazy">
+                <img src="assets/images/IMG_8588.JPG" alt="Tân cử nhân Đào Thị Tố Uyên" loading="lazy">
                 <div class="item-hover-info">
-                  <span class="info-title">Giảng đường ngập nắng</span>
+                  <span class="info-title">Tân cử nhân rạng rỡ</span>
                   <span class="info-tag">Xem ảnh 🔍</span>
                 </div>
                 <button class="photo-heart-btn small" data-id="card-7">
@@ -281,29 +355,42 @@
             </form>
           </div>
 
-          <!-- Wishes Feed List -->
-          <div class="wishes-feed" id="wishesFeed">
-            
-            <!-- Default Wish (Verbatim from Screenshot 4) -->
-            <div class="wish-card default-wish" id="wish-default-1">
-              <div class="wish-card-inner">
-                <div class="wish-author-name">Thu Hìn xinh</div>
-                <div class="wish-message-body">
-                  Chúc mừng pà đã tốt nghiệp. Chúc pà chặng đường phía trước tươi đẹp để về báo hiếu cho bà nội với ba mẹ. Cột mốc đánh dấu pà đã trưởng thành, mong rằng mọi hành động, suy nghĩ sau này của pà sẽ thật chín chắn và đúng đắn. Nhớ dành tgian về thăm bà nội nhìu hơn. Thay lời ông nội chúc mừng pà đã hoàn thành chặng đường học tập vừa qua, trở thành niềm tự hào của ông bà và ba mẹ!
-                </div>
+          <!-- Graduation Quotes (Những câu nói ý nghĩa ngày tốt nghiệp) -->
+          <div class="graduation-quotes-wrap">
+            <div class="grad-quote-card">
+              <div class="grad-quote-icon">“</div>
+              <p class="grad-quote-text">
+                Tốt nghiệp không phải là kết thúc một hành trình, mà là điểm xuất phát rực rỡ nhất để vươn tới những ước mơ và hoài bão lớn lao.
+              </p>
+              <div class="grad-quote-author">
+                <span class="bullet">✦</span> Tân Cử Nhân · Trường Đại học Văn Hiến
               </div>
             </div>
 
-            <!-- Dynamic wishes inserted here -->
-            <div id="dynamicWishesContainer"></div>
+            <div class="grad-quote-card">
+              <div class="grad-quote-icon">“</div>
+              <p class="grad-quote-text">
+                Thanh xuân như cơn mưa rào tuyệt đẹp. Dưới mái trường thân thương, cảm ơn vì chúng ta đã cùng nhau trưởng thành và rạng rỡ chạm mốc cử nhân.
+              </p>
+              <div class="grad-quote-author">
+                <span class="bullet">✦</span> For my besties of youth
+              </div>
+            </div>
 
+            <div class="grad-quote-card">
+              <div class="grad-quote-icon">“</div>
+              <p class="grad-quote-text">
+                Tự tin sải cánh bước vào tương lai. Bầu trời phía trước dẫu rộng lớn bao la, hãy luôn vững bước và tỏa sáng theo cách của riêng mình!
+              </p>
+              <div class="grad-quote-author">
+                <span class="bullet">✦</span> Vững bước tương lai · Chạm mốc vinh quang
+              </div>
+            </div>
           </div>
 
-          <!-- Expand / Collapse More Wishes Button -->
-          <div class="expand-wishes-wrap">
-            <button class="expand-wishes-btn" id="toggleMoreWishesBtn">
-              <span id="expandBtnText">Xem thêm lời chúc ↓</span>
-            </button>
+          <!-- Dynamic wishes from guests inserted here -->
+          <div class="wishes-feed" id="wishesFeed">
+            <div id="dynamicWishesContainer"></div>
           </div>
 
         </div>
@@ -323,20 +410,9 @@
           <!-- Script Title -->
           <div class="countdown-script-title">Countdown</div>
 
-          <!-- Live Numbers Timer (00 d : 00 h : 00 m : 00 s) -->
-          <div class="countdown-digits-row" id="countdownClock">
-            <span class="cd-item"><strong id="timerDays">00</strong> d</span>
-            <span class="cd-sep">:</span>
-            <span class="cd-item"><strong id="timerHours">00</strong> h</span>
-            <span class="cd-sep">:</span>
-            <span class="cd-item"><strong id="timerMinutes">00</strong> m</span>
-            <span class="cd-sep">:</span>
-            <span class="cd-item"><strong id="timerSeconds">00</strong> s</span>
-          </div>
-
           <!-- Ceremony Date Confirmation -->
           <div class="ceremony-reminder">
-            <span>18 Tháng 07, 2026 · 10:00 Sáng</span>
+            <span>17 Tháng 11, 2026 · 09:00 - 11:00 Sáng</span>
             <p>Trường Đại học Văn Hiến - TP.HCM</p>
           </div>
 
@@ -393,21 +469,21 @@
           <div class="preview-qr-box">
             <svg viewBox="0 0 100 100" width="100" height="100">
               <rect width="100" height="100" fill="#ffffff" rx="8" />
-              <rect x="10" y="10" width="26" height="26" fill="#7b384a" />
+              <rect x="10" y="10" width="26" height="26" fill="#163e75" />
               <rect x="14" y="14" width="18" height="18" fill="#ffffff" />
-              <rect x="18" y="18" width="10" height="10" fill="#7b384a" />
-              <rect x="64" y="10" width="26" height="26" fill="#7b384a" />
+              <rect x="18" y="18" width="10" height="10" fill="#163e75" />
+              <rect x="64" y="10" width="26" height="26" fill="#163e75" />
               <rect x="68" y="14" width="18" height="18" fill="#ffffff" />
-              <rect x="72" y="18" width="10" height="10" fill="#7b384a" />
-              <rect x="10" y="64" width="26" height="26" fill="#7b384a" />
+              <rect x="72" y="18" width="10" height="10" fill="#163e75" />
+              <rect x="10" y="64" width="26" height="26" fill="#163e75" />
               <rect x="14" y="68" width="18" height="18" fill="#ffffff" />
-              <rect x="18" y="72" width="10" height="10" fill="#7b384a" />
-              <rect x="42" y="12" width="8" height="8" fill="#7b384a" />
-              <rect x="52" y="24" width="8" height="8" fill="#7b384a" />
+              <rect x="18" y="72" width="10" height="10" fill="#163e75" />
+              <rect x="42" y="12" width="8" height="8" fill="#163e75" />
+              <rect x="52" y="24" width="8" height="8" fill="#163e75" />
               <rect x="44" y="44" width="12" height="12" fill="#d4af37" rx="3" />
-              <rect x="64" y="56" width="8" height="8" fill="#7b384a" />
-              <rect x="74" y="70" width="10" height="10" fill="#7b384a" />
-              <rect x="44" y="76" width="8" height="8" fill="#7b384a" />
+              <rect x="64" y="56" width="8" height="8" fill="#163e75" />
+              <rect x="74" y="70" width="10" height="10" fill="#163e75" />
+              <rect x="44" y="76" width="8" height="8" fill="#163e75" />
             </svg>
           </div>
           <p class="preview-hint">Quét mã hoặc mở trên điện thoại để trải nghiệm trọn vẹn nhất</p>
@@ -512,6 +588,6 @@
   <!-- CELEBRATORY CONFETTI CANVAS -->
   <canvas id="confettiCanvas"></canvas>
 
-  <script src="./script.js?v=4.0"></script>
+  <script src="./script.js?v=5.2"></script>
 </body>
 </html>
