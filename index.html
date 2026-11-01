@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Thiệp Mời Dự Lễ Tốt Nghiệp | Đào Thị Tố Uyên - VHU</title>
+  <meta name="description" content="Thiệp mời tham dự Lễ tốt nghiệp Đào Thị Tố Uyên đại học của  - Trường Đại học Quốc tế Hồng Bàng. Cùng chia sẻ khoảnh khắc thanh xuân rực rỡ!">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Alex Brush, Great Vibes, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css?v=4.0">
+</head>
+<body>
+
+  <!-- Ambient Golden Sparkle Canvas -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- Desktop Presentation Backdrop (Wraps the mobile invitation container) -->
+  <div class="app-layout">
+
+    <!-- Desktop Ambient Decoration (Left/Right wings on large screens) -->
+    <aside class="desktop-wing wing-left" aria-hidden="true">
+      <div class="wing-content">
+        <div class="wing-badge">🎓 GRADUATION CEREMONY</div>
+        <h2 class="wing-name">Đào Thị Tố Uyên</h2>
+        <p class="wing-sub">Faculty of Event Management</p>
+        <div class="wing-university">Trường Đại học Văn Hiến</div>
+        <div class="wing-date">18.07.2026 · 10:00 AM</div>
+        <div class="wing-quote">“Thanh xuân là những chuyến tàu rực rỡ, cảm ơn vì bạn đã luôn đồng hành cùng mình!”</div>
+      </div>
+    </aside>
+
+    <main class="invitation-phone" id="invitationViewport">
+      <section class="slide-section slide-hero" id="slide-1" data-index="1">
+
+        <div class="paper-texture-overlay"></div>
+
+        <div class="hiu-header">
+          <div class="hiu-logo-group">
+            <div class="hiu-shield-icon">
+              <span>V</span>
+            </div>
+            <div class="hiu-text-wrap">
+              <span class="hiu-main-name">VANHIEN</span>
+              <span class="hiu-sub-name">UNIVERSITY · VHU</span>
+            </div>
+          </div>
+          <button class="top-close-btn" id="topCloseBtn" title="Đóng / Khởi động lại">
+            <span>&times;</span>
+          </button>
+        </div>
+
+        <!-- 3D Realistic Soft Pink Satin Sash / Ribbon (Organic Curved Draped Silk with Continuous Gold Border) -->
+        <div class="sash-ribbon" id="sashRibbon" aria-label="Dải băng tốt nghiệp Đào Thị Tố Uyên">
+          
+          <!-- SVG Silk Ribbon with Curved Draped Edges and Continuous Gold Border -->
+          <svg class="sash-svg-base" viewBox="0 0 120 540" preserveAspectRatio="none">
+            <defs>
+              <!-- Multi-stop Realistic Silk Satin Gradient with cylindrical highlights -->
+              <linearGradient id="silkSatinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#C75B74" />
+                <stop offset="10%" stop-color="#DF859A" />
+                <stop offset="26%" stop-color="#F9CFDB" />
+                <stop offset="38%" stop-color="#E2899F" />
+                <stop offset="62%" stop-color="#FCE6ED" />
+                <stop offset="80%" stop-color="#D06E86" />
+                <stop offset="100%" stop-color="#B24962" />
+              </linearGradient>
+
+              <!-- Metallic Beveled Gold Ribbon Trim Gradient -->
+              <linearGradient id="luxGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF0BE" />
+                <stop offset="22%" stop-color="#D4AF37" />
+                <stop offset="46%" stop-color="#FFF9E2" />
+                <stop offset="72%" stop-color="#AA781D" />
+                <stop offset="90%" stop-color="#F3D57E" />
+                <stop offset="100%" stop-color="#996515" />
+              </linearGradient>
+
+              <!-- Silk Soft Shadow Filter for Draped Fabric Depth -->
+              <filter id="silkSoftBlur" x="-10%" y="-10%" width="120%" height="120%">
+                <feGaussianBlur stdDeviation="3.5" />
+              </filter>
+            </defs>
+
+            <!-- Organic Draped Silk Cloth Silhouette -->
+            <path class="sash-cloth-path"
+              d="M 14,0 
+                 C 16,110 24,240 22,350 
+                 C 20,410 24,455 26,476 
+                 L 74,528 
+                 L 116,468 
+                 C 114,410 118,280 115,140 
+                 C 114,70 116,20 115,0 
+                 Z"
+              fill="url(#silkSatinGrad)"
+              stroke="url(#luxGoldGrad)"
+              stroke-width="4.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+
+            <!-- Inner Gold Pinstripe Stitching -->
+            <path class="sash-stitch-path"
+              d="M 19,2 
+                 C 21,110 29,240 27,350 
+                 C 25,408 28,450 30,470 
+                 L 74,519 
+                 L 111,464 
+                 C 109,408 113,280 110,140 
+                 C 109,70 111,20 110,2"
+              fill="none"
+              stroke="url(#luxGoldGrad)"
+              stroke-width="1.2"
+              stroke-dasharray="5,2.5"
+              stroke-opacity="0.85"
+            />
+
+            <!-- 3D Silk Drape Shadow Folds (Simulating Real Draped Fabric Creases) -->
+            <path d="M 28,10 C 32,150 38,300 36,440" 
+              fill="none" 
+              stroke="rgba(90, 20, 36, 0.22)" 
+              stroke-width="8" 
+              filter="url(#silkSoftBlur)" 
+              opacity="0.7"
+            />
+            <path d="M 52,10 C 58,160 64,310 62,450" 
+              fill="none" 
+              stroke="rgba(255, 255, 255, 0.42)" 
+              stroke-width="6" 
+              filter="url(#silkSoftBlur)" 
+              opacity="0.85"
+            />
+            <path d="M 88,10 C 92,160 94,300 90,440" 
+              fill="none" 
+              stroke="rgba(80, 16, 32, 0.18)" 
+              stroke-width="7" 
+              filter="url(#silkSoftBlur)" 
+              opacity="0.6"
+            />
+
+            <!-- Delicate Gold Fringe / Chevron Accent at the Tip -->
+            <polygon points="74,528 70,538 78,538" fill="url(#luxGoldGrad)" opacity="0.9" />
+          </svg>
+
+          <!-- Diagonal Glossy Silk Sheen Sweep (Satin Luster Reflection) -->
+          <div class="sash-shimmer-sweep"></div>
+
+          <!-- Vertical Typography Layers (Parallel Down the Sash from Top to Bottom) -->
+          <div class="sash-content-layer">
+            <!-- Left Lane: Faculty/Department Title -->
+            <div class="sash-faculty-track">Faculty of Event Management</div>
+            <!-- Right Lane: Graduate Calligraphy Script Name (Stretching Elegantly Along the Sash) -->
+            <div class="sash-name-track">Đào Thị Tố Uyên</div>
+          </div>
+
+        </div>
+
+        <!-- Invitation Left Main Content -->
+        <div class="hero-left-content">
+          
+          <!-- Dear Guest & Personalized Link Button -->
+          <div class="dear-row">
+            <span class="dear-label">Dear:</span>
+            <div class="dear-input-wrap">
+              <input type="text" id="guestNameInput" class="guest-name-field" value="Quý khách" placeholder="Nhập tên khách" title="Bấm vào để nhập tên khách mời">
+              <span class="dear-dots">_ _ _ _ _ </span>
+            </div>
+            <button type="button" class="btn-open-creator-pill" id="openLinkCreatorBtn" title="Tạo link gửi riêng cho từng người">
+              <span>💌 Tạo link</span>
+            </button>
+          </div>
+
+          <!-- Invitation Subtitle -->
+          <p class="invite-preamble">Đến tham dự</p>
+
+          <!-- Main Event Title -->
+          <h1 class="main-event-title">LỄ TỐT NGHIỆP</h1>
+
+          <!-- Calligraphy Graduate Name -->
+          <div class="graduate-script-name">Đào Thị Tố Uyên</div>
+
+          <!-- Date & Time Block -->
+          <div class="event-datetime-box">
+            <div class="dt-day">THỨ BẢY</div>
+            <div class="dt-date">18.07.2026</div>
+            <div class="dt-time">10:00 AM</div>
+          </div>
+
+          <!-- Location Block -->
+          <div class="event-location-box">
+            <div class="loc-label">TẠI</div>
+            <div class="loc-venue">Trường Đại học Văn Hiến</div>
+            <div class="loc-address"> 613 Âu Cơ, Phường Phú Trung, Quận Tân Phú</div>
+            <div class="loc-city">Thành Phố Hồ Chí Minh</div>
+          </div>
+
+          <!-- Directions Button -->
+          <div class="action-btn-row">
+            <a href="https://maps.google.com/?q=215+Điện+Biên+Phủ+Phường+15+Bình+Thạnh+Thành+phố+Hồ+Chí+Minh" target="_blank" rel="noopener noreferrer" class="directions-pill-btn" id="directionsBtn">
+              <span class="dir-icon">📍</span>
+              <span class="dir-text">Chỉ đường</span>
+            </a>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ===================================================================
+           SLIDE 2: TÂM SỰ THANH XUÂN (PORTRAIT NARRATIVE SPOTLIGHT)
+           =================================================================== -->
+      <section class="slide-section slide-narrative" id="slide-2" data-index="2">
+        
+        <!-- Full Bleed Graduate Portrait Photo -->
+        <div class="narrative-bg-image" style="background-image: url('assets/images/thu_van_portrait.jpg');"></div>
+        
+        <!-- Cinematic Dark Scrim Overlay for Crystal-Clear Text Legibility -->
+        <div class="narrative-scrim-overlay"></div>
+
+        <!-- Letter Content Layer -->
+        <div class="narrative-content-wrap">
+          <div class="narrative-paragraphs">
+            <p>
+              Vậy là sau bao lần chạy deadline, ôn thi xuyên đêm và không ít lần tự hỏi <em>"bao giờ mới ra trường?"</em>, cuối cùng con/ em/ mình cũng đã chạm đến cột mốc tốt nghiệp!
+            </p>
+            <p>
+              Kết thúc một chặng đường cũ để bắt đầu một hành trình mới, con/ em/ mình nhận ra rằng điều quý giá nhất mình có được không chỉ là tấm bằng, mà còn là những kỷ niệm, bài học và những con người tuyệt vời đã đồng hành trên suốt chặng đường ấy.
+            </p>
+            <p>
+              Trong suốt chặng đường này, con/ em/ mình đã trưởng thành hơn rất nhiều nhờ có sự sát cánh, yêu thương và ủng hộ từ mọi người. Chính vì vậy, nếu những người thân yêu của Sườn/ Vân đang cầm trên tay tấm thiệp này, thì mọi người đã góp một phần thật đẹp trong hành trình thanh xuân của con/ em/ mình.
+            </p>
+            <p>
+              Con/ Em/ Mình sẽ rất vui và hạnh phúc nếu được gặp mọi người trong ngày tốt nghiệp để cùng chia sẻ niềm vui và lưu giữ thêm một kỷ niệm đáng nhớ trước khi bắt đầu một hành trình mới.
+            </p>
+            <p class="narrative-highlight">
+              Sự hiện diện của mọi người sẽ là món quà ý nghĩa nhất tiếp thêm sức mạnh cho con/ em/ mình bước sang một chương mới rực rỡ hơn.
+            </p>
+          </div>
+
+          <!-- Editorial Signature at Bottom -->
+          <div class="narrative-footer">
+            <div class="script-besties">For my besties</div>
+            <div class="caps-youth">OF YOUTH...</div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ===================================================================
+           SLIDE 3: ALBUM OF YOUTH (PHOTO GALLERY CARDS)
+           =================================================================== -->
+      <section class="slide-section slide-album" id="slide-3" data-index="3">
+        
+        <!-- Linen Texture -->
+        <div class="paper-texture-overlay"></div>
+
+        <div class="album-container">
+          
+          <!-- Header -->
+          <div class="album-header">
+            <div>
+              <h2 class="album-title">
+                ALBUM <span class="title-of">of</span> YOUTH
+              </h2>
+              <p class="album-subtitle">Lưu giữ từng nụ cười và dấu ấn thanh xuân rạng rỡ</p>
+            </div>
+            <div class="album-cap-icon" title="Tốt nghiệp rực rỡ" id="floatingCapIcon">
+              🎓
+            </div>
+          </div>
+
+          <!-- Dual Portrait Photo Cards (Screenshot 3 Layout) -->
+          <div class="album-photos-row">
+            
+            <!-- Photo Card 1: Side Profile Smile -->
+            <div class="photo-card" data-category="portrait" data-index="0" data-full="assets/images/thu_van_profile.jpg" data-caption="Kỷ niệm ngày khoác lên mình chiếc áo cử nhân HIU">
+              <div class="photo-frame">
+                <img src="assets/images/thu_van_profile.jpg" alt="Đào Thị Tố Uyên - Kỷ niệm tốt nghiệp" loading="lazy">
+                <div class="photo-overlay-tag">
+                  <span>Phóng to ✨</span>
+                </div>
+                <button class="photo-heart-btn" data-id="card-1" title="Thả tim ảnh này">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">198</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Photo Card 2: Front Radiant Smile -->
+            <div class="photo-card" data-category="portrait" data-index="1" data-full="assets/images/thu_van_portrait.jpg" data-caption="Nụ cười rạng rỡ chạm mốc cử nhân xuất sắc">
+              <div class="photo-frame">
+                <img src="assets/images/thu_van_portrait.jpg" alt="Đào Thị Tố Uyên - Tân Cử Nhân VHU" loading="lazy">
+                <div class="photo-overlay-tag">
+                  <span>Phóng to ✨</span>
+                </div>
+                <button class="photo-heart-btn" data-id="card-2" title="Thả tim ảnh này">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">256</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="album-filter-tabs" id="albumFilterTabs">
+            <button class="filter-tab active" data-filter="all">Tất cả (7)</button>
+            <button class="filter-tab" data-filter="portrait">Chân dung</button>
+            <button class="filter-tab" data-filter="besties">Bạn bè</button>
+            <button class="filter-tab" data-filter="ceremony">Lễ trao bằng</button>
+          </div>
+
+          <!-- Extended Multi-Photo Grid (Showing All 7 Photos) -->
+          <div class="extended-album-grid" id="extendedAlbumGrid">
+            
+            <!-- Photo 3: Rạng rỡ ôm hoa hướng dương -->
+            <div class="grid-photo-item" data-category="ceremony" data-index="2" data-full="assets/images/van_sunflowers.jpg" data-caption="Nụ cười rạng rỡ bên bó hoa hướng dương ngày nhận bằng">
+              <div class="item-inner">
+                <img src="assets/images/van_sunflowers.jpg" alt="Đào Thị Tố Uyên ôm hoa tốt nghiệp" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">Nắng vàng thanh xuân</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-3">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">312</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Photo 4: Hội bạn thân kề vai sát cánh -->
+            <div class="grid-photo-item featured-wide" data-category="besties" data-index="3" data-full="assets/images/van_besties.jpg" data-caption="Cùng những người bạn thân thương ôm chặt tấm bằng cử nhân">
+              <div class="item-inner">
+                <img src="assets/images/van_besties.jpg" alt="Hội bạn thân tốt nghiệp cùng nhau" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">For my besties of youth</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-4">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">420</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Photo 5: Khoảnh khắc tung mũ cử nhân -->
+            <div class="grid-photo-item" data-category="ceremony" data-index="4" data-full="assets/images/cap_toss.jpg" data-caption="Khoảnh khắc tung mũ cử nhân bay vút lên bầu trời ước mơ">
+              <div class="item-inner">
+                <img src="assets/images/cap_toss.jpg" alt="Tung mũ tốt nghiệp" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">Ước mơ bay cao</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-5">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">289</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Photo 6: Bó hoa chúc mừng & thiệp -->
+            <div class="grid-photo-item" data-category="ceremony" data-index="5" data-full="assets/images/celebration_flowers.jpg" data-caption="Ngập tràn hoa chúc mừng và tình yêu thương từ gia đình">
+              <div class="item-inner">
+                <img src="assets/images/celebration_flowers.jpg" alt="Hoa chúc mừng tốt nghiệp" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">Yêu thương đong đầy</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-6">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">175</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Photo 7: Giảng đường ngập nắng -->
+            <div class="grid-photo-item" data-category="besties" data-index="6" data-full="assets/images/campus_memories.jpg" data-caption="Kỷ niệm những buổi chiều ôn thi, họp nhóm dưới bóng mát sân trường">
+              <div class="item-inner">
+                <img src="assets/images/campus_memories.jpg" alt="Khuôn viên trường thân thương" loading="lazy">
+                <div class="item-hover-info">
+                  <span class="info-title">Giảng đường ngập nắng</span>
+                  <span class="info-tag">Xem ảnh 🔍</span>
+                </div>
+                <button class="photo-heart-btn small" data-id="card-7">
+                  <span class="heart-icon">❤️</span>
+                  <span class="heart-count">210</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ===================================================================
+           SLIDE 4: SỔ LƯU BÚT (GUESTBOOK & WISHES LIST)
+           =================================================================== -->
+      <section class="slide-section slide-guestbook" id="slide-4" data-index="4">
+        
+        <!-- Linen Texture -->
+        <div class="paper-texture-overlay"></div>
+
+        <div class="guestbook-container">
+          
+          <!-- Header -->
+          <div class="guestbook-header">
+            <h2 class="script-heading">Sổ lưu bút</h2>
+            <p class="guestbook-sub">Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến ngày tốt nghiệp của mình.</p>
+          </div>
+
+          <!-- Wish Submission Form Card (Mauve Box) -->
+          <div class="wish-form-card">
+            <form id="wishForm" onsubmit="return false;">
+              <div class="form-input-group">
+                <input type="text" id="wishSenderName" class="wish-text-field" placeholder="Nhập tên của bạn*" required autocomplete="name">
+              </div>
+              <div class="form-input-group">
+                <textarea id="wishMessageText" class="wish-textarea-field" placeholder="Nhập lời chúc của bạn*" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="wish-submit-btn" id="sendWishBtn">
+                <span>Gửi lời chúc</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Wishes Feed List -->
+          <div class="wishes-feed" id="wishesFeed">
+            
+            <!-- Default Wish (Verbatim from Screenshot 4) -->
+            <div class="wish-card default-wish" id="wish-default-1">
+              <div class="wish-card-inner">
+                <div class="wish-author-name">Thu Hìn xinh</div>
+                <div class="wish-message-body">
+                  Chúc mừng pà đã tốt nghiệp. Chúc pà chặng đường phía trước tươi đẹp để về báo hiếu cho bà nội với ba mẹ. Cột mốc đánh dấu pà đã trưởng thành, mong rằng mọi hành động, suy nghĩ sau này của pà sẽ thật chín chắn và đúng đắn. Nhớ dành tgian về thăm bà nội nhìu hơn. Thay lời ông nội chúc mừng pà đã hoàn thành chặng đường học tập vừa qua, trở thành niềm tự hào của ông bà và ba mẹ!
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic wishes inserted here -->
+            <div id="dynamicWishesContainer"></div>
+
+          </div>
+
+          <!-- Expand / Collapse More Wishes Button -->
+          <div class="expand-wishes-wrap">
+            <button class="expand-wishes-btn" id="toggleMoreWishesBtn">
+              <span id="expandBtnText">Xem thêm lời chúc ↓</span>
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ===================================================================
+           SLIDE 5: COUNTDOWN & THANK YOU (FINAL SECTION)
+           =================================================================== -->
+      <section class="slide-section slide-countdown" id="slide-5" data-index="5">
+        
+        <!-- Linen Texture -->
+        <div class="paper-texture-overlay"></div>
+
+        <div class="countdown-container">
+          
+          <!-- Script Title -->
+          <div class="countdown-script-title">Countdown</div>
+
+          <!-- Live Numbers Timer (00 d : 00 h : 00 m : 00 s) -->
+          <div class="countdown-digits-row" id="countdownClock">
+            <span class="cd-item"><strong id="timerDays">00</strong> d</span>
+            <span class="cd-sep">:</span>
+            <span class="cd-item"><strong id="timerHours">00</strong> h</span>
+            <span class="cd-sep">:</span>
+            <span class="cd-item"><strong id="timerMinutes">00</strong> m</span>
+            <span class="cd-sep">:</span>
+            <span class="cd-item"><strong id="timerSeconds">00</strong> s</span>
+          </div>
+
+          <!-- Ceremony Date Confirmation -->
+          <div class="ceremony-reminder">
+            <span>18 Tháng 07, 2026 · 10:00 Sáng</span>
+            <p>Trường Đại học Văn Hiến - TP.HCM</p>
+          </div>
+
+          <!-- Add to Calendar Button -->
+          <div class="calendar-btn-wrap">
+            <button class="calendar-pill-btn" id="addToCalBtn">
+              <span>📅 Thêm sự kiện vào Lịch</span>
+            </button>
+          </div>
+
+          <div class="thank-you-script">Thank you</div>
+
+          <div class="footer-fine-print">
+            © 2026 Đào Thị Tố Uyên · Graduation Ceremony
+          </div>
+
+        </div>
+
+      </section>
+
+     <aside class="floating-controls" id="floatingControls" aria-label="Điều khiển nhanh">
+        
+        <button class="float-btn chevron-btn" id="scrollNextBtn" title="Cuộn đến phần tiếp theo" aria-label="Cuộn xuống">
+          <svg class="chevron-icon" id="chevronSvg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+
+        <!-- Music Player Button -->
+        <button class="float-btn music-btn" id="bgMusicBtn" title="Bật / Tắt giai điệu nền" aria-label="Nhạc nền">
+          <span class="music-icon" id="musicStatusIcon">🎵</span>
+          <span class="equalizer-bars" id="equalizerBars">
+            <i></i><i></i><i></i>
+          </span>
+        </button>
+
+        <!-- Share / Copy Link Button -->
+        <button class="float-btn share-btn" id="shareLinkBtn" title="Sao chép link thiệp mời" aria-label="Chia sẻ">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </button>
+
+      </aside>
+
+    </main>
+
+    <!-- Desktop Ambient Decoration (Right wing on large screens) -->
+    <aside class="desktop-wing wing-right" aria-hidden="true">
+      <div class="wing-content">
+        <div class="wing-card-preview">
+          <div class="preview-mini-title">THIỆP MỜI TRỰC TUYẾN</div>
+          <div class="preview-qr-box">
+            <svg viewBox="0 0 100 100" width="100" height="100">
+              <rect width="100" height="100" fill="#ffffff" rx="8" />
+              <rect x="10" y="10" width="26" height="26" fill="#7b384a" />
+              <rect x="14" y="14" width="18" height="18" fill="#ffffff" />
+              <rect x="18" y="18" width="10" height="10" fill="#7b384a" />
+              <rect x="64" y="10" width="26" height="26" fill="#7b384a" />
+              <rect x="68" y="14" width="18" height="18" fill="#ffffff" />
+              <rect x="72" y="18" width="10" height="10" fill="#7b384a" />
+              <rect x="10" y="64" width="26" height="26" fill="#7b384a" />
+              <rect x="14" y="68" width="18" height="18" fill="#ffffff" />
+              <rect x="18" y="72" width="10" height="10" fill="#7b384a" />
+              <rect x="42" y="12" width="8" height="8" fill="#7b384a" />
+              <rect x="52" y="24" width="8" height="8" fill="#7b384a" />
+              <rect x="44" y="44" width="12" height="12" fill="#d4af37" rx="3" />
+              <rect x="64" y="56" width="8" height="8" fill="#7b384a" />
+              <rect x="74" y="70" width="10" height="10" fill="#7b384a" />
+              <rect x="44" y="76" width="8" height="8" fill="#7b384a" />
+            </svg>
+          </div>
+          <p class="preview-hint">Quét mã hoặc mở trên điện thoại để trải nghiệm trọn vẹn nhất</p>
+          <div class="preview-music-tag">🎵 Nhạc nền piano lãng mạn</div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- MODAL: TẠO THIỆP GỬI CHO TỪNG NGƯỜI (PERSONALIZED GUEST LINK GENERATOR) -->
+  <div class="modal-backdrop" id="linkCreatorModal">
+    <div class="modal-dialog-box personalized-link-dialog">
+      <div class="modal-header-bar">
+        <div class="header-icon-title">
+          <span class="m-icon">💌</span>
+          <h3>Tạo Link Thiệp Gửi Từng Người</h3>
+        </div>
+        <button class="modal-close-x" id="closeLinkCreatorBtn" title="Đóng">&times;</button>
+      </div>
+      <div class="modal-body-content">
+        <p class="modal-desc">
+          Nhập tên người bạn muốn gửi (ví dụ: <em>Anh Tuấn, Bác Năm, Cô Giáo, Bạn Thân...</em>). Hệ thống sẽ tạo đường link riêng, khi họ mở ra thiệp sẽ hiện đúng tên trang trọng của họ!
+        </p>
+
+        <!-- Input Guest Name -->
+        <div class="creator-input-group">
+          <label for="creatorGuestName">Tên người nhận thiệp:</label>
+          <div class="creator-input-wrapper">
+            <input type="text" id="creatorGuestName" placeholder="Ví dụ: Hoàng Tuấn, Thầy Minh, Chị Lan..." value="Quý khách" maxlength="60">
+            <button type="button" class="btn-clear-input" id="clearGuestNameBtn" title="Xóa nhập lại">✕</button>
+          </div>
+        </div>
+
+        <!-- Quick Suggestion Chips -->
+        <div class="quick-chips-row">
+          <span class="chips-label">Gợi ý xưng hô:</span>
+          <div class="chips-list">
+            <button type="button" class="name-chip" data-name="Thầy Cô quý mến">Thầy Cô</button>
+            <button type="button" class="name-chip" data-name="Gia Đình Bác">Gia Đình</button>
+            <button type="button" class="name-chip" data-name="Bạn Thân">Bạn Thân</button>
+            <button type="button" class="name-chip" data-name="Anh Chị">Anh Chị</button>
+            <button type="button" class="name-chip" data-name="Đồng Nghiệp">Đồng Nghiệp</button>
+            <button type="button" class="name-chip" data-name="Quý khách">Quý khách</button>
+          </div>
+        </div>
+
+        <!-- Live Link Preview -->
+        <div class="creator-link-box">
+          <label for="generatedLinkInput">Đường link thiệp riêng đã tạo:</label>
+          <div class="link-display-row">
+            <input type="text" id="generatedLinkInput" readonly value="">
+            <button type="button" class="btn-copy-link" id="copyPersonalizedLinkBtn" title="Sao chép link">
+              <span>📋 Sao chép</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="creator-actions-row">
+          <button type="button" class="btn-share-zalo" id="shareViaZaloBtn">
+            <span>💬 Gửi qua Zalo / Messenger</span>
+          </button>
+          <button type="button" class="btn-preview-link" id="previewPersonalizedBtn">
+            <span>👁️ Xem thử thiệp</span>
+          </button>
+        </div>
+
+        <div class="creator-guide-tip">
+          💡 <strong>Mẹo:</strong> Bạn cũng có thể bấm trực tiếp vào chữ <u>Dear: Quý khách</u> ở ngay bìa thiệp để gõ đổi tên nhanh chóng bất kỳ lúc nào!
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX PHOTO MODAL (ENHANCED FULLSCREEN VIEWER) -->
+  <div class="lightbox-modal" id="photoLightbox">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-dialog">
+      <div class="lightbox-top-bar">
+        <span class="lightbox-counter" id="lightboxCounter">Ảnh 1 / 7</span>
+        <button class="lightbox-close" id="lightboxCloseBtn" title="Đóng">&times;</button>
+      </div>
+      <div class="lightbox-img-wrapper">
+        <button class="lightbox-nav-btn prev" id="lightboxPrevBtn" title="Ảnh trước">❮</button>
+        <img src="" alt="Ảnh phóng to" id="lightboxImage">
+        <button class="lightbox-nav-btn next" id="lightboxNextBtn" title="Ảnh tiếp theo">❯</button>
+      </div>
+      <div class="lightbox-bottom-bar">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+        <button class="lightbox-love-btn" id="lightboxLoveBtn">
+          <span>❤️</span> Thả tim
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div class="toast-hub" id="toastHub"></div>
+
+  <!-- CELEBRATORY CONFETTI CANVAS -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <script src="./script.js?v=4.0"></script>
+</body>
+</html>
