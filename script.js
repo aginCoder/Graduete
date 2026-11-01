@@ -2,7 +2,7 @@ const ALBUM_PHOTOS = [
   {
     id: "photo-1",
     src: "assets/images/thu_van_profile.jpg",
-    caption: "Kỷ niệm ngày khoác lên mình chiếc áo cử nhân HIU rạng rỡ",
+    caption: "Kỷ niệm ngày khoác lên mình chiếc áo cử nhân VHU rạng rỡ",
     category: "portrait"
   },
   {

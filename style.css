@@ -315,85 +315,110 @@ body {
   position: relative;
 }
 
-/* HIU Brand Header */
+/* ===================================================================
+   UNIVERSITY BRAND HEADER (TRƯỜNG ĐẠI HỌC VĂN HIẾN · VHU)
+   =================================================================== */
 .hiu-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
   z-index: 10;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .hiu-logo-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* Circular Official Seal Emblem */
 .hiu-shield-icon {
-  width: 38px;
-  height: 38px;
-  background: var(--hiu-red);
-  border-radius: 6px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: #FFFFFF;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(196, 18, 48, 0.28);
+  padding: 2px;
+  box-shadow: 
+    0 4px 14px rgba(15, 56, 118, 0.22),
+    0 0 0 1.5px rgba(220, 162, 56, 0.5),
+    0 0 0 3px #FFFFFF;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.hiu-shield-icon:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 
+    0 6px 18px rgba(15, 56, 118, 0.32),
+    0 0 0 2px rgba(220, 162, 56, 0.8),
+    0 0 0 4px #FFFFFF;
+}
+
+.hiu-shield-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 
 .hiu-shield-icon span {
-  color: #FFFFFF;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 26px;
-  line-height: 1;
+  display: none;
 }
 
 .hiu-text-wrap {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .hiu-main-name {
   font-family: var(--font-sans);
   font-weight: 800;
-  font-size: 15px;
-  letter-spacing: 0.8px;
-  color: #1A1A1A;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  color: #0F3876;
   line-height: 1.15;
 }
 
 .hiu-sub-name {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 9.5px;
-  letter-spacing: 1px;
-  color: #555555;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #C59436;
   line-height: 1.2;
 }
 
 .top-close-btn {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  color: #FFFFFF;
-  border: none;
+  background: rgba(123, 56, 74, 0.08);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--primary-mauve);
+  border: 1px solid rgba(123, 56, 74, 0.18);
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 30;
 }
 
 .top-close-btn:hover {
-  background: rgba(0, 0, 0, 0.55);
-  transform: scale(1.08);
+  background: var(--primary-mauve);
+  color: #FFFFFF;
+  border-color: var(--primary-mauve);
+  transform: rotate(90deg) scale(1.08);
 }
 
 /* ===================================================================
@@ -402,70 +427,55 @@ body {
 .sash-ribbon {
   position: absolute;
   top: 0;
-  right: 10px;
-  width: 114px;
-  height: 83%;
+  right: 8px;
+  width: 130px;
+  height: 520px;
   z-index: 15;
   pointer-events: none;
-  transform-origin: 85% 0%;
-  filter: drop-shadow(0 14px 26px rgba(115, 45, 62, 0.35));
-  animation: sashUnfurl 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards, sashSoftLivingSway 7.2s cubic-bezier(0.37, 0, 0.63, 1) infinite 1.3s;
+  transform-origin: 50% 0%;
+  animation: sashUnfurl 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards, sashSoftLivingSway 4.8s cubic-bezier(0.37, 0, 0.63, 1) infinite 1.3s;
   will-change: transform, filter;
 }
 
 /* Continuous, Fluid, Organic Satin Swaying with Fabric Physics */
 @keyframes sashSoftLivingSway {
   0% {
-    transform: rotate(-3.2deg) rotateY(0deg) skewY(0.2deg) scaleX(1);
-    filter: drop-shadow(0 14px 24px rgba(115, 45, 62, 0.32));
+    transform: rotate(-2.8deg) rotateY(0deg) skewY(0.3deg);
+    filter: drop-shadow(-2px 14px 24px rgba(115, 45, 62, 0.32));
   }
   25% {
-    transform: rotate(-2.0deg) rotateY(5.5deg) skewY(-0.5deg) scaleX(1.012);
-    filter: drop-shadow(4px 18px 28px rgba(115, 45, 62, 0.38));
+    transform: rotate(-1.4deg) rotateY(5.2deg) skewY(-0.35deg);
+    filter: drop-shadow(3px 18px 28px rgba(115, 45, 62, 0.38));
   }
   50% {
-    transform: rotate(-4.2deg) rotateY(-4.5deg) skewY(0.6deg) scaleX(0.992);
-    filter: drop-shadow(-3px 15px 25px rgba(115, 45, 62, 0.30));
+    transform: rotate(-3.9deg) rotateY(-4.8deg) skewY(0.45deg);
+    filter: drop-shadow(-4px 15px 25px rgba(115, 45, 62, 0.28));
   }
   75% {
-    transform: rotate(-2.5deg) rotateY(4deg) skewY(-0.3deg) scaleX(1.008);
-    filter: drop-shadow(3px 17px 27px rgba(115, 45, 62, 0.36));
+    transform: rotate(-1.8deg) rotateY(3.6deg) skewY(-0.2deg);
+    filter: drop-shadow(2px 17px 27px rgba(115, 45, 62, 0.35));
   }
   100% {
-    transform: rotate(-3.2deg) rotateY(0deg) skewY(0.2deg) scaleX(1);
-    filter: drop-shadow(0 14px 24px rgba(115, 45, 62, 0.32));
+    transform: rotate(-2.8deg) rotateY(0deg) skewY(0.3deg);
+    filter: drop-shadow(-2px 14px 24px rgba(115, 45, 62, 0.32));
   }
 }
 
 @keyframes sashUnfurl {
   0% { transform: translateY(-100%) rotate(-8deg); opacity: 0; }
-  65% { transform: translateY(6px) rotate(-2deg); opacity: 1; }
-  85% { transform: translateY(-3px) rotate(-4deg); }
-  100% { transform: translateY(0) rotate(-3.2deg); opacity: 1; }
+  65% { transform: translateY(6px) rotate(-1.5deg); opacity: 1; }
+  85% { transform: translateY(-3px) rotate(-3.5deg); }
+  100% { transform: translateY(0) rotate(-2.8deg); opacity: 1; }
 }
 
-/* Base SVG Silk Ribbon Canvas */
-.sash-svg-base {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Photorealistic High-Resolution Silk Satin Sash Image */
+.sash-silk-img {
   width: 100%;
   height: 100%;
-  overflow: visible;
+  object-fit: fill;
   display: block;
-}
-
-.sash-cloth-path {
-  transition: filter 0.3s ease;
-}
-
-.sash-stitch-path {
-  animation: goldStitchGleam 4s ease-in-out infinite alternate;
-}
-
-@keyframes goldStitchGleam {
-  0% { stroke-opacity: 0.7; }
-  100% { stroke-opacity: 1; filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.6)); }
+  pointer-events: none;
+  filter: drop-shadow(0 14px 28px rgba(115, 45, 62, 0.38));
 }
 
 /* Continuous Shimmer Light Gleam across Satin */
@@ -478,13 +488,17 @@ body {
   background: linear-gradient(
     115deg,
     transparent 38%,
-    rgba(255, 255, 255, 0.38) 50%,
-    rgba(255, 248, 230, 0.52) 53%,
+    rgba(255, 255, 255, 0.42) 50%,
+    rgba(255, 248, 230, 0.58) 53%,
     transparent 66%
   );
   pointer-events: none;
   z-index: 10;
-  animation: silkShimmerSweep 5.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  mask-image: url('assets/images/pink_satin_sash.png');
+  -webkit-mask-image: url('assets/images/pink_satin_sash.png');
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  animation: silkShimmerSweep 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes silkShimmerSweep {
@@ -507,35 +521,53 @@ body {
 /* Left Lane: Faculty/Department Title */
 .sash-faculty-track {
   position: absolute;
-  top: 26px;
-  left: 32px;
+  top: 32px;
+  left: 34px;
   transform: rotate(90deg);
   transform-origin: 0 0;
   white-space: nowrap;
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
   color: #FFFFFF;
-  text-shadow: 0 1px 3px rgba(70, 15, 28, 0.8), 0 0 1px rgba(0, 0, 0, 0.4);
-  filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.3));
+  text-shadow: 0 1px 3px rgba(60, 10, 20, 0.85), 0 0 1px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0 1px 2px rgba(212, 175, 55, 0.4));
 }
 
 /* Right Lane: Graduate Calligraphy Script Name (Flowing Down the Length of the Sash) */
 .sash-name-track {
   position: absolute;
-  top: 30px;
-  left: 88px;
+  top: 36px;
+  left: 102px;
   transform: rotate(90deg);
   transform-origin: 0 0;
   white-space: nowrap;
   font-family: var(--font-script);
-  font-size: 46px;
+  font-size: 50px;
   line-height: 1;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: #FFFFFF;
-  text-shadow: 0 2px 6px rgba(70, 15, 28, 0.85), 0 0 4px rgba(255, 255, 255, 0.35);
-  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.45));
+  text-shadow: 0 2px 8px rgba(60, 10, 20, 0.9), 0 0 5px rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.5));
+}
+
+@media (max-width: 380px) {
+  .sash-ribbon {
+    width: 112px;
+    height: 460px;
+    right: 4px;
+  }
+  .sash-name-track {
+    font-size: 44px;
+    left: 88px;
+    top: 30px;
+  }
+  .sash-faculty-track {
+    font-size: 12.5px;
+    left: 28px;
+    top: 26px;
+  }
 }
 
 /* ===================================================================
@@ -544,7 +576,7 @@ body {
 .hero-left-content {
   position: relative;
   z-index: 10;
-  max-width: 280px;
+  max-width: calc(100% - 120px);
   margin-top: 18px;
   display: flex;
   flex-direction: column;

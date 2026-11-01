@@ -4,27 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Thiệp Mời Dự Lễ Tốt Nghiệp | Đào Thị Tố Uyên - VHU</title>
-  <meta name="description" content="Thiệp mời tham dự Lễ tốt nghiệp Đào Thị Tố Uyên đại học của  - Trường Đại học Quốc tế Hồng Bàng. Cùng chia sẻ khoảnh khắc thanh xuân rực rỡ!">
+  <meta name="description" content="Thiệp mời tham dự Lễ tốt nghiệp Đào Thị Tố Uyên - Trường Đại học Văn Hiến (VHU). Cùng chia sẻ khoảnh khắc thanh xuân rực rỡ!">
 
-  <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
-
-  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Alex Brush, Great Vibes, Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./style.css?v=4.0">
+  <link rel="stylesheet" href="./style.css?v=4.2">
 </head>
 <body>
 
-  <!-- Ambient Golden Sparkle Canvas -->
   <canvas id="ambientCanvas"></canvas>
-
-  <!-- Desktop Presentation Backdrop (Wraps the mobile invitation container) -->
   <div class="app-layout">
-
-    <!-- Desktop Ambient Decoration (Left/Right wings on large screens) -->
     <aside class="desktop-wing wing-left" aria-hidden="true">
       <div class="wing-content">
         <div class="wing-badge">🎓 GRADUATION CEREMONY</div>
@@ -44,10 +36,10 @@
         <div class="hiu-header">
           <div class="hiu-logo-group">
             <div class="hiu-shield-icon">
-              <span>V</span>
+              <img src="./assets/images/Logo.jpg" alt="Logo Trường Đại học Văn Hiến - VHU">
             </div>
             <div class="hiu-text-wrap">
-              <span class="hiu-main-name">VANHIEN</span>
+              <span class="hiu-main-name">VAN HIEN</span>
               <span class="hiu-sub-name">UNIVERSITY · VHU</span>
             </div>
           </div>
@@ -56,116 +48,17 @@
           </button>
         </div>
 
-        <!-- 3D Realistic Soft Pink Satin Sash / Ribbon (Organic Curved Draped Silk with Continuous Gold Border) -->
         <div class="sash-ribbon" id="sashRibbon" aria-label="Dải băng tốt nghiệp Đào Thị Tố Uyên">
-          
-          <!-- SVG Silk Ribbon with Curved Draped Edges and Continuous Gold Border -->
-          <svg class="sash-svg-base" viewBox="0 0 120 540" preserveAspectRatio="none">
-            <defs>
-              <!-- Multi-stop Realistic Silk Satin Gradient with cylindrical highlights -->
-              <linearGradient id="silkSatinGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#C75B74" />
-                <stop offset="10%" stop-color="#DF859A" />
-                <stop offset="26%" stop-color="#F9CFDB" />
-                <stop offset="38%" stop-color="#E2899F" />
-                <stop offset="62%" stop-color="#FCE6ED" />
-                <stop offset="80%" stop-color="#D06E86" />
-                <stop offset="100%" stop-color="#B24962" />
-              </linearGradient>
-
-              <!-- Metallic Beveled Gold Ribbon Trim Gradient -->
-              <linearGradient id="luxGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#FFF0BE" />
-                <stop offset="22%" stop-color="#D4AF37" />
-                <stop offset="46%" stop-color="#FFF9E2" />
-                <stop offset="72%" stop-color="#AA781D" />
-                <stop offset="90%" stop-color="#F3D57E" />
-                <stop offset="100%" stop-color="#996515" />
-              </linearGradient>
-
-              <!-- Silk Soft Shadow Filter for Draped Fabric Depth -->
-              <filter id="silkSoftBlur" x="-10%" y="-10%" width="120%" height="120%">
-                <feGaussianBlur stdDeviation="3.5" />
-              </filter>
-            </defs>
-
-            <!-- Organic Draped Silk Cloth Silhouette -->
-            <path class="sash-cloth-path"
-              d="M 14,0 
-                 C 16,110 24,240 22,350 
-                 C 20,410 24,455 26,476 
-                 L 74,528 
-                 L 116,468 
-                 C 114,410 118,280 115,140 
-                 C 114,70 116,20 115,0 
-                 Z"
-              fill="url(#silkSatinGrad)"
-              stroke="url(#luxGoldGrad)"
-              stroke-width="4.5"
-              stroke-linejoin="round"
-              stroke-linecap="round"
-            />
-
-            <!-- Inner Gold Pinstripe Stitching -->
-            <path class="sash-stitch-path"
-              d="M 19,2 
-                 C 21,110 29,240 27,350 
-                 C 25,408 28,450 30,470 
-                 L 74,519 
-                 L 111,464 
-                 C 109,408 113,280 110,140 
-                 C 109,70 111,20 110,2"
-              fill="none"
-              stroke="url(#luxGoldGrad)"
-              stroke-width="1.2"
-              stroke-dasharray="5,2.5"
-              stroke-opacity="0.85"
-            />
-
-            <!-- 3D Silk Drape Shadow Folds (Simulating Real Draped Fabric Creases) -->
-            <path d="M 28,10 C 32,150 38,300 36,440" 
-              fill="none" 
-              stroke="rgba(90, 20, 36, 0.22)" 
-              stroke-width="8" 
-              filter="url(#silkSoftBlur)" 
-              opacity="0.7"
-            />
-            <path d="M 52,10 C 58,160 64,310 62,450" 
-              fill="none" 
-              stroke="rgba(255, 255, 255, 0.42)" 
-              stroke-width="6" 
-              filter="url(#silkSoftBlur)" 
-              opacity="0.85"
-            />
-            <path d="M 88,10 C 92,160 94,300 90,440" 
-              fill="none" 
-              stroke="rgba(80, 16, 32, 0.18)" 
-              stroke-width="7" 
-              filter="url(#silkSoftBlur)" 
-              opacity="0.6"
-            />
-
-            <!-- Delicate Gold Fringe / Chevron Accent at the Tip -->
-            <polygon points="74,528 70,538 78,538" fill="url(#luxGoldGrad)" opacity="0.9" />
-          </svg>
-
-          <!-- Diagonal Glossy Silk Sheen Sweep (Satin Luster Reflection) -->
+          <img src="assets/images/pink_satin_sash.png" class="sash-silk-img" alt="Dải băng lụa satin tốt nghiệp" draggable="false">
           <div class="sash-shimmer-sweep"></div>
-
-          <!-- Vertical Typography Layers (Parallel Down the Sash from Top to Bottom) -->
           <div class="sash-content-layer">
-            <!-- Left Lane: Faculty/Department Title -->
             <div class="sash-faculty-track">Faculty of Event Management</div>
-            <!-- Right Lane: Graduate Calligraphy Script Name (Stretching Elegantly Along the Sash) -->
             <div class="sash-name-track">Đào Thị Tố Uyên</div>
           </div>
-
         </div>
 
-        <!-- Invitation Left Main Content -->
         <div class="hero-left-content">
           
-          <!-- Dear Guest & Personalized Link Button -->
           <div class="dear-row">
             <span class="dear-label">Dear:</span>
             <div class="dear-input-wrap">
@@ -177,23 +70,18 @@
             </button>
           </div>
 
-          <!-- Invitation Subtitle -->
           <p class="invite-preamble">Đến tham dự</p>
 
-          <!-- Main Event Title -->
           <h1 class="main-event-title">LỄ TỐT NGHIỆP</h1>
 
-          <!-- Calligraphy Graduate Name -->
           <div class="graduate-script-name">Đào Thị Tố Uyên</div>
 
-          <!-- Date & Time Block -->
           <div class="event-datetime-box">
             <div class="dt-day">THỨ BẢY</div>
             <div class="dt-date">18.07.2026</div>
             <div class="dt-time">10:00 AM</div>
           </div>
 
-          <!-- Location Block -->
           <div class="event-location-box">
             <div class="loc-label">TẠI</div>
             <div class="loc-venue">Trường Đại học Văn Hiến</div>
@@ -201,9 +89,8 @@
             <div class="loc-city">Thành Phố Hồ Chí Minh</div>
           </div>
 
-          <!-- Directions Button -->
           <div class="action-btn-row">
-            <a href="https://maps.google.com/?q=215+Điện+Biên+Phủ+Phường+15+Bình+Thạnh+Thành+phố+Hồ+Chí+Minh" target="_blank" rel="noopener noreferrer" class="directions-pill-btn" id="directionsBtn">
+            <a href="https://maps.app.goo.gl/WomhQ5xkCkgjrGU6A" target="_blank" rel="noopener noreferrer" class="directions-pill-btn" id="directionsBtn">
               <span class="dir-icon">📍</span>
               <span class="dir-text">Chỉ đường</span>
             </a>
@@ -212,20 +99,10 @@
         </div>
 
       </section>
-
-      <!-- ===================================================================
-           SLIDE 2: TÂM SỰ THANH XUÂN (PORTRAIT NARRATIVE SPOTLIGHT)
-           =================================================================== -->
       <section class="slide-section slide-narrative" id="slide-2" data-index="2">
-        
-        <!-- Full Bleed Graduate Portrait Photo -->
-        <div class="narrative-bg-image" style="background-image: url('assets/images/thu_van_portrait.jpg');"></div>
-        
-        <!-- Cinematic Dark Scrim Overlay for Crystal-Clear Text Legibility -->
-        <div class="narrative-scrim-overlay"></div>
-
-        <!-- Letter Content Layer -->
-        <div class="narrative-content-wrap">
+       <div class="narrative-bg-image" style="background-image: url('assets/images/thu_van_portrait.jpg');"></div>
+       <div class="narrative-scrim-overlay"></div>
+       <div class="narrative-content-wrap">
           <div class="narrative-paragraphs">
             <p>
               Vậy là sau bao lần chạy deadline, ôn thi xuyên đêm và không ít lần tự hỏi <em>"bao giờ mới ra trường?"</em>, cuối cùng con/ em/ mình cũng đã chạm đến cột mốc tốt nghiệp!
@@ -244,7 +121,6 @@
             </p>
           </div>
 
-          <!-- Editorial Signature at Bottom -->
           <div class="narrative-footer">
             <div class="script-besties">For my besties</div>
             <div class="caps-youth">OF YOUTH...</div>
@@ -252,18 +128,11 @@
         </div>
 
       </section>
+     <section class="slide-section slide-album" id="slide-3" data-index="3">
 
-      <!-- ===================================================================
-           SLIDE 3: ALBUM OF YOUTH (PHOTO GALLERY CARDS)
-           =================================================================== -->
-      <section class="slide-section slide-album" id="slide-3" data-index="3">
-        
-        <!-- Linen Texture -->
         <div class="paper-texture-overlay"></div>
 
         <div class="album-container">
-          
-          <!-- Header -->
           <div class="album-header">
             <div>
               <h2 class="album-title">
@@ -276,10 +145,8 @@
             </div>
           </div>
 
-          <!-- Dual Portrait Photo Cards (Screenshot 3 Layout) -->
           <div class="album-photos-row">
             
-            <!-- Photo Card 1: Side Profile Smile -->
             <div class="photo-card" data-category="portrait" data-index="0" data-full="assets/images/thu_van_profile.jpg" data-caption="Kỷ niệm ngày khoác lên mình chiếc áo cử nhân HIU">
               <div class="photo-frame">
                 <img src="assets/images/thu_van_profile.jpg" alt="Đào Thị Tố Uyên - Kỷ niệm tốt nghiệp" loading="lazy">
@@ -293,7 +160,6 @@
               </div>
             </div>
 
-            <!-- Photo Card 2: Front Radiant Smile -->
             <div class="photo-card" data-category="portrait" data-index="1" data-full="assets/images/thu_van_portrait.jpg" data-caption="Nụ cười rạng rỡ chạm mốc cử nhân xuất sắc">
               <div class="photo-frame">
                 <img src="assets/images/thu_van_portrait.jpg" alt="Đào Thị Tố Uyên - Tân Cử Nhân VHU" loading="lazy">
@@ -309,7 +175,6 @@
 
           </div>
 
-          <!-- Category Filter Tabs -->
           <div class="album-filter-tabs" id="albumFilterTabs">
             <button class="filter-tab active" data-filter="all">Tất cả (7)</button>
             <button class="filter-tab" data-filter="portrait">Chân dung</button>
@@ -317,10 +182,8 @@
             <button class="filter-tab" data-filter="ceremony">Lễ trao bằng</button>
           </div>
 
-          <!-- Extended Multi-Photo Grid (Showing All 7 Photos) -->
           <div class="extended-album-grid" id="extendedAlbumGrid">
             
-            <!-- Photo 3: Rạng rỡ ôm hoa hướng dương -->
             <div class="grid-photo-item" data-category="ceremony" data-index="2" data-full="assets/images/van_sunflowers.jpg" data-caption="Nụ cười rạng rỡ bên bó hoa hướng dương ngày nhận bằng">
               <div class="item-inner">
                 <img src="assets/images/van_sunflowers.jpg" alt="Đào Thị Tố Uyên ôm hoa tốt nghiệp" loading="lazy">
@@ -335,7 +198,6 @@
               </div>
             </div>
 
-            <!-- Photo 4: Hội bạn thân kề vai sát cánh -->
             <div class="grid-photo-item featured-wide" data-category="besties" data-index="3" data-full="assets/images/van_besties.jpg" data-caption="Cùng những người bạn thân thương ôm chặt tấm bằng cử nhân">
               <div class="item-inner">
                 <img src="assets/images/van_besties.jpg" alt="Hội bạn thân tốt nghiệp cùng nhau" loading="lazy">
@@ -349,8 +211,6 @@
                 </button>
               </div>
             </div>
-
-            <!-- Photo 5: Khoảnh khắc tung mũ cử nhân -->
             <div class="grid-photo-item" data-category="ceremony" data-index="4" data-full="assets/images/cap_toss.jpg" data-caption="Khoảnh khắc tung mũ cử nhân bay vút lên bầu trời ước mơ">
               <div class="item-inner">
                 <img src="assets/images/cap_toss.jpg" alt="Tung mũ tốt nghiệp" loading="lazy">
@@ -365,7 +225,6 @@
               </div>
             </div>
 
-            <!-- Photo 6: Bó hoa chúc mừng & thiệp -->
             <div class="grid-photo-item" data-category="ceremony" data-index="5" data-full="assets/images/celebration_flowers.jpg" data-caption="Ngập tràn hoa chúc mừng và tình yêu thương từ gia đình">
               <div class="item-inner">
                 <img src="assets/images/celebration_flowers.jpg" alt="Hoa chúc mừng tốt nghiệp" loading="lazy">
@@ -380,7 +239,6 @@
               </div>
             </div>
 
-            <!-- Photo 7: Giảng đường ngập nắng -->
             <div class="grid-photo-item" data-category="besties" data-index="6" data-full="assets/images/campus_memories.jpg" data-caption="Kỷ niệm những buổi chiều ôn thi, họp nhóm dưới bóng mát sân trường">
               <div class="item-inner">
                 <img src="assets/images/campus_memories.jpg" alt="Khuôn viên trường thân thương" loading="lazy">
@@ -400,24 +258,15 @@
         </div>
 
       </section>
-
-      <!-- ===================================================================
-           SLIDE 4: SỔ LƯU BÚT (GUESTBOOK & WISHES LIST)
-           =================================================================== -->
       <section class="slide-section slide-guestbook" id="slide-4" data-index="4">
         
-        <!-- Linen Texture -->
         <div class="paper-texture-overlay"></div>
 
         <div class="guestbook-container">
-          
-          <!-- Header -->
           <div class="guestbook-header">
             <h2 class="script-heading">Sổ lưu bút</h2>
             <p class="guestbook-sub">Cảm ơn bạn rất nhiều vì đã gửi những lời chúc mừng tốt đẹp nhất đến ngày tốt nghiệp của mình.</p>
           </div>
-
-          <!-- Wish Submission Form Card (Mauve Box) -->
           <div class="wish-form-card">
             <form id="wishForm" onsubmit="return false;">
               <div class="form-input-group">
