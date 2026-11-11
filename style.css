@@ -787,6 +787,28 @@ body {
   color: var(--text-muted);
 }
 
+.loc-phone-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.loc-phone-link .phone-num {
+  color: var(--primary-mauve);
+  font-weight: 600;
+  border-bottom: 1px dashed rgba(22, 62, 117, 0.45);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.loc-phone-link:hover .phone-num,
+.loc-phone-link:active .phone-num {
+  color: var(--primary-mauve-dark);
+  border-bottom-style: solid;
+  border-bottom-color: var(--primary-mauve-dark);
+}
+
 /* Directions Button: [ 📍 Chỉ đường ] */
 .action-btn-row {
   margin-top: 6px;
