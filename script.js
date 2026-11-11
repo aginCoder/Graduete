@@ -214,7 +214,7 @@ function initPersonalizedLinkModal() {
       updateGeneratedLink();
       const url = linkOutput.value;
       const guest = nameInput.value.trim() || "quý khách";
-      const shareText = `Thân gửi ${guest}! Kính mời ${guest} đến tham dự Lễ Tốt Nghiệp của Đào Thị Tố Uyên tại Trường ĐH Văn Hiến vào ngày 18.07.2026. Mở thiệp tại:`;
+      const shareText = `Thân gửi ${guest}! Kính mời ${guest} đến tham dự Lễ Tốt Nghiệp của Đào Thị Tố Uyên tại Nhà Hát Hòa Bình vào ngày 17.11.2026. Mở thiệp tại:`;
 
       if (navigator.share) {
         try {
